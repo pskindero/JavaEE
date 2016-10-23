@@ -1,21 +1,35 @@
 package com.pskindero.javaee.learning.jpadaoexample.entities;
 
-import java.util.List;
-
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.NotNull;
 
-//@Entity
-//@NamedQuery( name = "Book.readAll", query = "SELECT b FROM Book b")
+@Entity
+@NamedQuery(name = "Book.readAll", query = "SELECT b FROM Book b")
 public class Book {
 
-//	@Id
+	@Id
+	@SequenceGenerator(name = "book_id_seq", sequenceName = "book_id_seq", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@NotNull
 	private Long id;
-	private String title;
-	private List<Author> authors;
 	
-	public Book() {}
+	@NotNull
+	private String title;
+	
+	@NotNull
+	@ManyToOne
+	@JoinColumn(name = "author_id")
+	private Author author;
+
+	public Book() {
+	}
 
 	public Long getId() {
 		return id;
@@ -34,15 +48,11 @@ public class Book {
 	}
 
 	public Author getAuthor() {
-		return authors.get(0);
-	}
-	
-	public List<Author> getAuthors() {
-		return authors;
+		return author;
 	}
 
-	public void setAuthors(List<Author> authors) {
-		this.authors = authors;
+	public void setAuthors(Author author) {
+		this.author = author;
 	}
 
 	@Override
@@ -52,8 +62,8 @@ public class Book {
 		builder.append(id);
 		builder.append(", title=");
 		builder.append(title);
-		builder.append(", authors=");
-		builder.append(authors);
+		builder.append(", author=");
+		builder.append(author);
 		builder.append("]");
 		return builder.toString();
 	}

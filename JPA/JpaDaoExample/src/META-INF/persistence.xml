@@ -5,7 +5,8 @@
 
 	<persistence-unit name="org.hibernate.tutorial.jpa">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>com.pskindero.javaee.learning.jpadaoexample.Author</class>
+		<class>com.pskindero.javaee.learning.jpadaoexample.entities.Author</class>
+		<class>com.pskindero.javaee.learning.jpadaoexample.entities.Book</class>
 
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
@@ -25,8 +26,8 @@
 				value="script" />
 			<property name="javax.persistence.schema-generation.create-script-source"
 				value="src/main/sql/create.sql" />
-			<!-- <property name="javax.persistence.sql-load-script-source" -->
-			<!-- value="META-INF/sql/data.sql" /> -->
+			<property name="javax.persistence.sql-load-script-source"
+				value="src/main/sql/load_data.sql" />
 			<property name="javax.persistence.schema-generation.drop-source"
 				value="script" />
 			<property name="javax.persistence.schema-generation.drop-script-source"
