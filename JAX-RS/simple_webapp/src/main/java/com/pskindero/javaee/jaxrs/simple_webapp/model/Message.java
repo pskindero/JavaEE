@@ -55,5 +55,20 @@ public class Message {
 	public void setDate(Date date) {
 		this.date = date;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Message [id=");
+		builder.append(id);
+		builder.append(", author=");
+		builder.append(author);
+		builder.append(", message=");
+		builder.append(message);
+		builder.append(", date=");
+		builder.append(date);
+		builder.append("]");
+		return builder.toString();
+	}
 	
 }

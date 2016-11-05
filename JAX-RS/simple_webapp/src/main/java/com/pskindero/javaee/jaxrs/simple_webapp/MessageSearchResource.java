@@ -31,9 +31,9 @@ public class MessageSearchResource {
 	}
 
 	@GET
-	@Produces(MediaType.APPLICATION_XML)
-	public List<Message> getAllMessages() {
-		return messages;
+	@Produces(MediaType.TEXT_PLAIN)
+	public String getAllMessages() {
+		return messages.toString();
 	}
 	
 	@GET

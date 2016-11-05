@@ -11,5 +11,5 @@ Date: Sat, 05 Nov 2016 11:06:32 GMT
 
 
 http://localhost:8080/simple_webapp/search/messages
-
+http://localhost:8080/simple_webapp/search/messages/xml
 http://localhost:8080/simple_webapp/search/messages/json
