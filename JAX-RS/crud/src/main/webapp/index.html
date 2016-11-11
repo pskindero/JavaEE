@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Book DB</title>
+
+<link rel="stylesheet" href="css/main_page_style.css" />
+</head>
+<body>
+You can list, add, modify or delete books!<br>
+
+
+<div class="header">
+	<input type="text" id="searchKey"/>
+	<button id="btnSearch">Search</button>
+	<button id="btnAdd">Add New Book</button>
+</div>
+
+<div class="leftArea">
+<ul id="bookList"></ul>
+</div>
+
+<form id="bookForm">
+	
+<div class="mainArea">
+
+<label>Id:</label>
+<input type="text"  id="bookId" name="bookId" disabled />
+
+<label>Title:</label>
+<input type="text" id="title" name="title" required>
+
+<label>Author:</label>
+<input type="text" id="author" name="author"/>
+
+<label>Prize:</label>
+<input type="text" id="prize" name="prize"/>
+
+<button id="btnSave">Save</button>
+<button id="btnDelete">Delete</button>
+
+</div>
+</form>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
