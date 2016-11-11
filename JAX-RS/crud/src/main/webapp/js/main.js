@@ -9,6 +9,7 @@ $('#btnDelete').hide();
 
 
 $('#btnSearch').click(function() {
+	console.log('btnSearch clicked');
 	search($('#searchKey').val());
 	return false;
 });
@@ -54,7 +55,7 @@ function search(searchKey) {
 function newBook() {
 	$('#btnDelete').hide();
 	currentBook = {};
-	renderDetails(currentBook); // Display empty form
+	renderDetails(currentBook); 
 }
 
 function findAll() {
