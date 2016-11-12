@@ -6,17 +6,21 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAttribute;
 
-//
-//@XmlRootElement
-//@XmlAccessorType (XmlAccessType.FIELD)
-//@XmlType(propOrder = {"id", "book", "prize"})
+
+@XmlRootElement
+@XmlAccessorType (XmlAccessType.FIELD)
+@XmlType(propOrder = {"book", "prize"})
 public class BookElement {
 
 	private static long idGen = 1L;
 	
+	@XmlAttribute
 	private long id;
+	
 	private Book book;
+	
 	private double prize;
 	
 	public BookElement() {
