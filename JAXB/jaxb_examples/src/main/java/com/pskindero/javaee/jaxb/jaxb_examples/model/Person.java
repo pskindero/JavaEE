@@ -1,15 +1,19 @@
 package com.pskindero.javaee.jaxb.jaxb_examples.model;
 
 import java.util.Date;
+
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement(name = "author")
+@XmlRootElement
 @XmlType(propOrder = {"name", "lastname", "dateOfBirth"})
 public class Person {
 
 	private String name;
+	
 	private String lastname;
+	
 	private Date dateOfBirth;
 	
 	public Person() {}
@@ -43,5 +47,18 @@ public class Person {
 
 	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Person [name=");
+		builder.append(name);
+		builder.append(", lastname=");
+		builder.append(lastname);
+		builder.append(", dateOfBirth=");
+		builder.append(dateOfBirth);
+		builder.append("]");
+		return builder.toString();
 	}
 }

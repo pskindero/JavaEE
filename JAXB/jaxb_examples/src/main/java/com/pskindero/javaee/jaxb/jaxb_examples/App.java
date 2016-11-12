@@ -1,42 +1,53 @@
 package com.pskindero.javaee.jaxb.jaxb_examples;
 
-import java.awt.print.Book;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+import com.pskindero.javaee.jaxb.jaxb_examples.model.Book;
 import com.pskindero.javaee.jaxb.jaxb_examples.model.Person;
 
-public class App  {
-	
-    public static void main( String[] args ) throws JAXBException{
-        Person p1 = new Person("Henryk", "Sienkiewicz", new Date(1888, 3, 3));
+public class App {
 
-        JAXBContext context = JAXBContext.newInstance(Person.class);
-        Marshaller m = context.createMarshaller();
-        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+	private static final String XML_PATH = "book.xml";
+	private static File created_xml;
 
-        // Write to System.out
-        m.marshal(p1, System.out);
+	public static void main(String[] args) throws JAXBException, FileNotFoundException {
+		Person cHorstmann = new Person("Cay", "Horstmann", new Date(1955, 2, 2));
+		Person gCornell = new Person("Gary", "Cornell", new Date(1963, 5, 8));
 
-        // get variables from our xml file, created before
-        System.out.println();
-        System.out.println("Output from our XML File: ");
-     
-//        Unmarshaller um = context.createUnmarshaller();
-//        Bookstore bookstore2 = (Bookstore) um.unmarshal(new FileReader(
-//                        BOOKSTORE_XML));
-//        ArrayList<Book> list = bookstore2.getBooksList();
-//        for (Book book : list) {
-//                System.out.println("Book: " + book.getName() + " from "
-//                                + book.getAuthor());
-//        }
+		List<Person> authors = new ArrayList<Person>();
+		authors.add(cHorstmann);
+		authors.add(gCornell);
 
-    }
+		Book jat = new Book("Java: Advanced Features", authors, 2004, "Prentice Hall");
+		System.out.println("Object to XML: \n");
+		marshallSaveAndPrint(jat);
+		System.out.println("\n================================\n");
+		unmarshallAndPrint();
+	}
+
+	public static void marshallSaveAndPrint(Book b) throws JAXBException {
+		JAXBContext context = JAXBContext.newInstance(Book.class);
+		Marshaller m = context.createMarshaller();
+		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+		created_xml = new File(XML_PATH);
+		m.marshal(b, created_xml);
+		m.marshal(b, System.out);
+	}
+
+	public static void unmarshallAndPrint() throws JAXBException, FileNotFoundException {
+		Unmarshaller um = JAXBContext.newInstance(Book.class).createUnmarshaller();
+		Book book = (Book) um.unmarshal(new FileReader(created_xml));
+		System.out.println("Unmarshalled: \n" + book);
+	}
+
 }
