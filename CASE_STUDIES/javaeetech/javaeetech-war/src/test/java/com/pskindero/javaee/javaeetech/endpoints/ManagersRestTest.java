@@ -30,6 +30,6 @@ public class ManagersRestTest extends BaseRestTest{
 	
 	@Test
 	public void restGET_FirstManager_ResultOk() {
-		execGetAndAssertIfNotOkStatus(Endpoints.GET_FIRST_MANAGER_URL);
+		execGetAndAssertIfNotOkStatus(Endpoints.GET_SECOND_MANAGER_URL);
 	}
 }

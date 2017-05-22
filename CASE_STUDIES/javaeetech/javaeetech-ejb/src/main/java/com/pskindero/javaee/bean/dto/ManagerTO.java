@@ -2,10 +2,10 @@ package com.pskindero.javaee.bean.dto;
 
 import com.pskindero.javaee.javaeetech.jpa.entity.Manager;
 
-public class ManagerDTO {
+public class ManagerTO {
 	
 	
-	public static ManagerDTO convert(Manager manager) {
+	public static ManagerTO convert(Manager manager) {
 		
 		return null;
 	}

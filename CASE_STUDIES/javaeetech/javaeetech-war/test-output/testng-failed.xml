@@ -8,6 +8,11 @@
           <include name="restGET_AllEmployees_Parse"/>
         </methods>
       </class> <!-- com.pskindero.javaee.javaeetech.endpoints.EmployeesRestTest -->
+      <class name="com.pskindero.javaee.javaeetech.endpoints.ManagersRestTest">
+        <methods>
+          <include name="restGET_FirstManager_ResultOk"/>
+        </methods>
+      </class> <!-- com.pskindero.javaee.javaeetech.endpoints.ManagersRestTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

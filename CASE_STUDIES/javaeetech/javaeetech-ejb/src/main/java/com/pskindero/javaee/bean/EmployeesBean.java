@@ -5,13 +5,12 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
-import javax.ejb.TransactionManagement;
-import javax.ejb.TransactionManagementType;
 import javax.inject.Inject;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.pskindero.javaee.bean.validation.EntityValidator;
 import com.pskindero.javaee.javaeetech.jpa.dao.impl.EmployeesDaoImpl;
 import com.pskindero.javaee.javaeetech.jpa.entity.Employee;
 import com.pskindero.javaee.javaeetech.jpa.entity.Gender;
@@ -23,6 +22,9 @@ public class EmployeesBean implements EmployeesBeanLocal {
 	
 	@Inject
 	private EmployeesDaoImpl dao;
+	
+	@Inject
+	private EntityValidator<Employee> validator;
 	
     public EmployeesBean() {
     }
@@ -40,6 +42,7 @@ public class EmployeesBean implements EmployeesBeanLocal {
 	public List<Employee> getEmployees() {
 		LOGGER.info("Get all Employees");
 		List<Employee> result = dao.findAll();
+		LOGGER.info("Validate result: {}", validator.validate(result));
 		LOGGER.info("Get all Employees result: {}", result);
 		return result;
 	}

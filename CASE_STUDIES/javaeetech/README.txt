@@ -2,7 +2,7 @@
 How to deploy application to Wildfly server?
 ============================================
 
-1. Start Wildfly 10 (/home/pskindero/Desktop/application_servers/wildfly-10.1.0.Final) by one following methods:
+1. Start Wildfly 10 by one following methods:
 - use bin/standalone.sh
 - use Eclipse GUI -> in Servers tab
 2. Go to Administration panel: http://localhost:9990/console/App

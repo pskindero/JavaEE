@@ -12,6 +12,6 @@ public class Endpoints {
 	public static final String GET_DUPA_DEPARTMENT_URL = GET_ALL_DEPARTMENTS_URL + "/DUPA";
 
 	public static final String GET_ALL_MANAGERS_URL = BASE_URL + "/serv/managers";
-	public static final String GET_FIRST_MANAGER_URL = GET_ALL_MANAGERS_URL + "/1";
+	public static final String GET_SECOND_MANAGER_URL = GET_ALL_MANAGERS_URL + "/2";
 
 }

@@ -3,6 +3,8 @@ INSERT INTO employees (first_name, last_name, email, gender, hire_date)
 	values ('Patryk', 'Rozporek', 'prozpor@gacie.com', 'M', '2010-02-13');
 INSERT INTO employees (first_name, last_name, email, gender, hire_date) 
 	values ('Janina', 'Klawisina', 'jan890@wp.pl', 'F', '2020-04-13');
+INSERT INTO employees (first_name, last_name, email, gender, hire_date) 
+	values ('Jan', 'Robust', 'jan890gmail', 'M', '2010-02-11');
 
 --Departments
 INSERT INTO departments (id, name) values ('DUPA', 'Digital Unit Program Area');
