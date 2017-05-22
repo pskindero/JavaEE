@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.pskindero.javaee</groupId>
+		<artifactId>javaeetech</artifactId>
+		<version>0.0.2-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>javaeetech-ear</artifactId>
+	<packaging>ear</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.pskindero.javaee</groupId>
+			<artifactId>javaeetech-war</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+	<!-- TODO -->
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.wildfly.plugins</groupId> -->
+<!-- 				<artifactId>wildfly-maven-plugin</artifactId> -->
+<!-- 				<version>1.2.0.Alpha4</version> -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<id>undeploy</id> -->
+<!-- 						<phase>clean</phase> -->
+<!-- 						<goals> -->
+<!-- 							<goal>undeploy</goal> -->
+<!-- 						</goals> -->
+<!-- 						<configuration> -->
+<!-- 							<ignoreMissingDeployment>true</ignoreMissingDeployment> -->
+<!-- 						</configuration> -->
+<!-- 					</execution> -->
+
+<!-- 					<execution> -->
+<!-- 						<phase>install</phase> -->
+<!-- 						<goals> -->
+<!-- 							<goal>deploy</goal> -->
+<!-- 						</goals> -->
+<!-- 					</execution> -->
+<!-- 				</executions> -->
+<!-- 			</plugin> -->
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
+<!-- 				<artifactId>maven-ear-plugin</artifactId> -->
+<!-- 				<configuration> -->
+<!-- 					<applicationXml>${project.basedir}/src/main/application/application.xml</applicationXml> -->
+<!-- 					<generateApplicationXml>true</generateApplicationXml> -->
+<!-- 					<modules> -->
+<!-- 						<ejbModule> -->
+<!-- 							<groupId>${project.groupId}</groupId> -->
+<!-- 							<artifactId>sample-ejbs</artifactId> -->
+<!-- 						</ejbModule> -->
+<!-- 						<ejbModule> -->
+<!-- 							<groupId>com.acme</groupId> -->
+<!-- 							<artifactId>acme-ejbs</artifactId> -->
+<!-- 						</ejbModule> -->
+<!-- 						<webModule> -->
+<!-- 							<groupId>com.pskindero.javaee</groupId> -->
+<!-- 							<artifactId>javaeetech-war</artifactId> -->
+<!-- 						</webModule> -->
+<!-- 					</modules> -->
+<!-- 				</configuration> -->
+<!-- 			</plugin> -->
+		</plugins>
+	</build>
+</project>

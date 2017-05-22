@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<appengine-application xmlns="http://appengine.google.com/ns/1.0">
+	<application>javaee</application>
+
+	<module>
+		<web>
+			<web-uri>javaeetech-war-0.0.2-SNAPSHOT.war</web-uri>
+			<context-root>/</context-root>
+		</web>
+	</module>
+</appengine-application>
